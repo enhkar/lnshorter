@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Link</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <style>
+        .form-shorter::before {
+            content: '';
+            display: block;
+            min-height: 6.5rem;
+            height: calc(50vh - 6rem);
+        }
+    </style>
+</head>
+<body class="h-100 container">
+<main class="row">
+    <div th:insert="~{header :: header}"></div>
+    <div class="container form-shorter">
+        <div class="row row-cols-2 justify-content-md-center">
+            <div class="col-6">
+                <div class="col border border-secondary-subtle rounded bg-light p-2">
+                    <a target="_blank" class="link-dark" th:href="${'http://localhost:8080/' + suffix}" style="padding-left: 1rem" th:text="${'http://ln.int/' + suffix}"></a>
+                </div>
+            </div>
+            <button type="button" class="btn btn-warning col-1 fw-light btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Скопировать" style="width: 3rem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</main>
+</body>
+</html>

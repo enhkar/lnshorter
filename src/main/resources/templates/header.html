@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="header" class="row display-5 mt-1">
+  <div class="col">
+      <a th:href="@{/}" class="col link-underline link-underline-opacity-0">LN</a>
+  </div>
+  <div class="col text-end">
+      <div sec:authorize="isAuthenticated()">
+          <a th:href="@{/user/links}" class="btn btn-secondary">Список</a>
+          <form th:action="@{/user/logout}" method="post" class="d-inline">
+              <button type="submit" th:href="@{/logout}" class="btn btn-secondary">Выйти</button>
+          </form>
+
+      </div>
+      <a th:href="@{/user/login}" sec:authorize="isAnonymous()" class="btn btn-secondary">Войти</a>
+  </div>
+</div>
+</body>
+</html>
